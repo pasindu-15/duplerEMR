@@ -20,10 +20,12 @@ public class NullPointerCount {
 
       public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
          String line = value.toString();
+         String keyWord = "NullPointerException";
+//         StringTokenizer tokenizer = new StringTokenizer(keyWord);
+         word.set(keyWord);
 
-         if(line.contains("COLONOSCOPY")){
-            StringTokenizer tokenizer = new StringTokenizer("COLONOSCOPY");
-            word.set(tokenizer.nextToken());
+         if(line.contains(keyWord)){
+
             context.write(word, one);
          }
 
