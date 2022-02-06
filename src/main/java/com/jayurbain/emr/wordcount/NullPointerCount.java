@@ -21,7 +21,6 @@ public class NullPointerCount {
       public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
          String line = value.toString();
          String keyWord = "NullPointerException";
-//         StringTokenizer tokenizer = new StringTokenizer(keyWord);
          word.set(keyWord);
 
          if(line.contains(keyWord)){
